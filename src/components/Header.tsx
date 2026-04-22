@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button'
 import { List, X } from '@phosphor-icons/react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useIsMobile } from '@/hooks/use-mobile'
+import logo from '@/assets/images/logo.png'
 
 const menuItems = [
   { label: 'Inicio', href: '#inicio' },
@@ -31,7 +32,7 @@ export function Header() {
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center">
             <a href="#inicio" onClick={(e) => { e.preventDefault(); scrollToSection('#inicio') }} className="flex items-center space-x-2">
-              <span className="font-bold text-xl text-primary">Xarela</span>
+              <img src={logo} alt="Xarela" className="h-10 w-auto" />
             </a>
           </div>
 

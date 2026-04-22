@@ -1,5 +1,6 @@
 import { Separator } from '@/components/ui/separator'
 import { Envelope, Phone, WhatsappLogo, FacebookLogo, TwitterLogo, MapPin } from '@phosphor-icons/react'
+import logo from '@/assets/images/logo.png'
 
 export function Footer() {
   return (
@@ -7,7 +8,7 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-6 md:px-8 py-16">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           <div>
-            <h3 className="text-lg font-semibold mb-4">Xarela Formación-Animación</h3>
+            <img src={logo} alt="Xarela" className="h-12 w-auto mb-4 brightness-0 invert" />
             <p className="text-primary-foreground/80 text-sm leading-relaxed mb-4">
               Unha labor imposible sen o apoio das administracións públicas, organismos e entidades privadas, os socios e socias, o equipo de voluntarios e de traballo, e persoas coas que traballamos desde o ano 1999.
             </p>
