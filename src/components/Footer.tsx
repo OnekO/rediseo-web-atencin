@@ -1,10 +1,11 @@
 import { Separator } from '@/components/ui/separator'
 import { Envelope, Phone, WhatsappLogo, FacebookLogo, TwitterLogo, MapPin } from '@phosphor-icons/react'
+import { Link } from 'react-router-dom'
 import logo from '@/assets/images/logo.png'
 
 export function Footer() {
   return (
-    <footer id="contacto" className="bg-primary text-primary-foreground">
+    <footer className="bg-primary text-primary-foreground">
       <div className="max-w-7xl mx-auto px-6 md:px-8 py-16">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           <div>
@@ -36,25 +37,22 @@ export function Footer() {
             <h3 className="text-lg font-semibold mb-4">Enlaces</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <a href="#inicio" className="text-primary-foreground/80 hover:text-accent transition-colors">Inicio</a>
+                <Link to="/" className="text-primary-foreground/80 hover:text-accent transition-colors">Inicio</Link>
               </li>
               <li>
-                <a href="#orientacion" className="text-primary-foreground/80 hover:text-accent transition-colors">Orientación</a>
+                <Link to="/labor-social" className="text-primary-foreground/80 hover:text-accent transition-colors">Labor social</Link>
               </li>
               <li>
-                <a href="#formacion" className="text-primary-foreground/80 hover:text-accent transition-colors">Formación</a>
+                <Link to="/novas" className="text-primary-foreground/80 hover:text-accent transition-colors">Novas</Link>
               </li>
               <li>
-                <a href="#social" className="text-primary-foreground/80 hover:text-accent transition-colors">Social</a>
+                <Link to="/que-podes-facer" className="text-primary-foreground/80 hover:text-accent transition-colors">¿Qué podes facer?</Link>
               </li>
               <li>
-                <a href="#ocio" className="text-primary-foreground/80 hover:text-accent transition-colors">Ocio</a>
+                <Link to="/agradecementos" className="text-primary-foreground/80 hover:text-accent transition-colors">Agradecementos</Link>
               </li>
               <li>
-                <a href="#igualdade" className="text-primary-foreground/80 hover:text-accent transition-colors">Igualdade</a>
-              </li>
-              <li>
-                <a href="#novas" className="text-primary-foreground/80 hover:text-accent transition-colors">Novas</a>
+                <Link to="/contacto" className="text-primary-foreground/80 hover:text-accent transition-colors">Contacto</Link>
               </li>
             </ul>
           </div>

@@ -3,37 +3,31 @@ import { Button } from '@/components/ui/button'
 import { List, X } from '@phosphor-icons/react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useIsMobile } from '@/hooks/use-mobile'
+import { Link, useLocation } from 'react-router-dom'
 import logo from '@/assets/images/logo.png'
 
 const menuItems = [
-  { label: 'Inicio', href: '#inicio' },
-  { label: 'Labor social', href: '#labor-social' },
-  { label: 'Novas', href: '#novas' },
-  { label: '¿Qué podes facer?', href: '#que-podes-facer' },
-  { label: 'Agradecementos', href: '#agradecementos' },
-  { label: 'Contacto', href: '#contacto' },
+  { label: 'Inicio', to: '/' },
+  { label: 'Labor social', to: '/labor-social' },
+  { label: 'Novas', to: '/novas' },
+  { label: '¿Qué podes facer?', to: '/que-podes-facer' },
+  { label: 'Agradecementos', to: '/agradecementos' },
+  { label: 'Contacto', to: '/contacto' },
 ]
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const isMobile = useIsMobile()
-
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href)
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
-    }
-    setMobileMenuOpen(false)
-  }
+  const location = useLocation()
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/80">
       <div className="max-w-7xl mx-auto px-6 md:px-8">
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center">
-            <a href="#inicio" onClick={(e) => { e.preventDefault(); scrollToSection('#inicio') }} className="flex items-center space-x-2">
+            <Link to="/" className="flex items-center space-x-2">
               <img src={logo} alt="Xarela" className="h-10 w-auto" />
-            </a>
+            </Link>
           </div>
 
           {!isMobile && (
@@ -42,13 +36,14 @@ export function Header() {
                 <Button
                   key={item.label}
                   variant="ghost"
-                  onClick={(e) => {
-                    e.preventDefault()
-                    scrollToSection(item.href)
-                  }}
-                  className="text-primary hover:text-primary hover:bg-primary/10"
+                  asChild
+                  className={`text-primary hover:text-primary hover:bg-primary/10 ${
+                    location.pathname === item.to ? 'bg-primary/10' : ''
+                  }`}
                 >
-                  {item.label}
+                  <Link to={item.to}>
+                    {item.label}
+                  </Link>
                 </Button>
               ))}
             </nav>
@@ -81,13 +76,15 @@ export function Header() {
                 <Button
                   key={item.label}
                   variant="ghost"
-                  onClick={(e) => {
-                    e.preventDefault()
-                    scrollToSection(item.href)
-                  }}
-                  className="text-primary hover:text-primary hover:bg-primary/10 justify-start"
+                  asChild
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={`text-primary hover:text-primary hover:bg-primary/10 justify-start ${
+                    location.pathname === item.to ? 'bg-primary/10' : ''
+                  }`}
                 >
-                  {item.label}
+                  <Link to={item.to}>
+                    {item.label}
+                  </Link>
                 </Button>
               ))}
             </nav>
