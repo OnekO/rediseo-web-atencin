@@ -4,7 +4,7 @@ import { ArrowRight } from '@phosphor-icons/react'
 
 export function Hero() {
   return (
-    <section className="relative bg-primary overflow-hidden">
+    <section id="inicio" className="relative bg-primary overflow-hidden">
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
           backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 35px, currentColor 35px, currentColor 70px)`

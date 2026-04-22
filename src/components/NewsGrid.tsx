@@ -18,7 +18,7 @@ interface NewsGridProps {
 
 export function NewsGrid({ news }: NewsGridProps) {
   return (
-    <section className="py-20 md:py-32 bg-muted/30">
+    <section id="novas" className="py-20 md:py-32 bg-muted/30">
       <div className="max-w-7xl mx-auto px-6 md:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

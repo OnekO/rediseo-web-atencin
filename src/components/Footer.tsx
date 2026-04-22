@@ -3,7 +3,7 @@ import { Envelope, Phone, WhatsappLogo, FacebookLogo, TwitterLogo, MapPin } from
 
 export function Footer() {
   return (
-    <footer className="bg-primary text-primary-foreground">
+    <footer id="contacto" className="bg-primary text-primary-foreground">
       <div className="max-w-7xl mx-auto px-6 md:px-8 py-16">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           <div>
