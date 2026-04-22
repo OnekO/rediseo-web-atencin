@@ -82,7 +82,7 @@ export function Footer() {
         <Separator className="bg-primary-foreground/20 mb-8" />
 
         <div className="text-center text-sm text-primary-foreground/60">
-          <p>Páxina feita con ❤️ por BoÑeko</p>
+          <p>Páxina feita con ❤️ por BoNeko</p>
         </div>
       </div>
     </footer>
